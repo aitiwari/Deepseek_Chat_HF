@@ -35,6 +35,7 @@ if api_key:
 
         # Get the model's response
         response = completion.choices[0].message['content']
+        rest_of_response =''
 
         # Check if the response contains <think> tags
         if "<think>" in response and "</think>" in response:
@@ -56,3 +57,4 @@ if api_key:
 else:
     with st.sidebar:
         st.warning("Please enter your Hugging Face API Key to proceed.")
+        st.link_button("How to get Huggingface API KEY","https://huggingface.co/docs/hub/security-tokens#what-are-user-access-tokens")
