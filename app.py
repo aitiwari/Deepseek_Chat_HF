@@ -51,4 +51,5 @@ if api_key:
             with st.chat_message("ai"):
                 st.write(rest_of_response)
 else:
-    st.warning("Please enter your Hugging Face API Key to proceed.")
+    with st.sidebar:
+        st.warning("Please enter your Hugging Face API Key to proceed.")
