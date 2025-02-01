@@ -14,6 +14,7 @@ if api_key:
 
     # Input box for user to enter their question
     user_input = st.chat_input("Enter your question:")
+    
 
     if user_input:
         # Prepare the messages for the model
@@ -23,6 +24,8 @@ if api_key:
                 "content": user_input
             }
         ]
+        with st.chat_message("user"):
+            st.write(user_input)
 
         # Get the completion from the model
         completion = client.chat.completions.create(
